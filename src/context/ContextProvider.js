@@ -8,11 +8,7 @@ const initialState = 2000;
 
 const items = () => {
 const items = localStorage.getItem('item')
- if(items){
-    return JSON.parse(localStorage.getItem('item'))
- }else{
-     return initialState
-}
+ return items? JSON.parse(items) : initialState
 }
 
 const ContextProvider = ({children}) => {
